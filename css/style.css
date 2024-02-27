@@ -16,21 +16,19 @@ body {
 }
 
 a {
-  color: #000000 !important;
-}
-
-body a {
-  color: #ffffff;
-  text-decoration: none;
+  color: #000000;
+  text-decoration: dotted;
 }
 
 p {
   font-size: 20px;
   color: rgb(0, 0, 0);
+  font-style: normal !important;
 }
 
 #line1 {
   color: rgb(255, 255, 255);
+  font-style: italic;
 }
 
 ul {
