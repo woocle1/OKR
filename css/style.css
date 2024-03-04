@@ -25,6 +25,18 @@ p {
   font-style: normal !important;
 }
 
+p > i {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+b + i {
+  color: rgb(255, 255, 255);
+}
+
+div b {
+  font-size: 18px;
+}
+
 #line1 {
   color: rgb(255, 255, 255);
   font-style: italic;
