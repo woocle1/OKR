@@ -1,22 +1,16 @@
-.hn {
-  font-size: 25px;
-  color: rgb(0, 0, 0);
-  font-style: italic;
-  line-height: 1.5;
-  text-align: center;
-  font-family: Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Barlow:wght@100&family=Imbue:opsz,wght@10..100,100..900&family=Inter:wght@400;800&family=Rajdhani:wght@300&family=Raleway&family=Roboto:wght@900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Imbue', serif;
+  font-weight: 700;
 }
 
 body {
   font-size: 25px;
   line-height: 1.6;
-  text-align: left;
-  background-color: hsl(137, 13%, 59%);
-  font-family: Arial, sans-serif;
-}
-
-a {
-  color: #000000;
+  background-color: white;
 }
 
 p {
@@ -25,52 +19,32 @@ p {
   font-style: normal !important;
 }
 
-p > i {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-b + i {
-  color: rgb(255, 255, 255);
-}
-
-div b {
-  font-size: 18px;
-}
-
 #line1 {
-  color: rgb(255, 255, 255);
-  font-style: italic;
+  color: black;
 }
 
 ul {
   list-style-type: disc;
   color: rgb(0, 0, 0);
-  font-family: Arial, sans-serif;
   font-size: 20px;
-  margin-left: 20px;
 }
 
 ol {
   list-style-type: decimal;
   color: rgb(0, 0, 0);
-  font-family: Arial, sans-serif;
   font-size: 20px;
-  margin-left: 20px;
 }
 
 dl {
   color: rgb(0, 0, 0);
-  font-family: Arial, sans-serif;
   font-size: 20px;
-  margin-left: 20px;
 }
 
 table,
 th,
 td {
-  border: 1px solid rgb(255, 255, 255);
+  border: 1px solid rgb(0, 0, 0);
   padding: 8px;
-  color: rgb(255, 255, 255);
   width: auto !important;
   border-collapse: collapse;
 }
@@ -78,13 +52,149 @@ td {
 th {
   background-color: #2f2d2d;
   color: rgb(235, 235, 235);
-  font-family: Arial, sans-serif;
   font-size: 20px;
   width: 100%;
 }
 
 td {
-  font-family: Arial, sans-serif;
-  font-size: 14px;
+  font-size: 20px;
   width: 100%;
+}
+
+td a {
+  color: black;
+}
+
+.main-body {
+  background-color: white;
+}
+
+.main-image {
+  width: 400px;
+  height: 550px;
+  border-radius: 40px;
+}
+
+.main-image-container {
+  padding-top: 20px;
+  padding-bottom: 50px;
+  margin: 40px 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-title {
+  margin: 40px 40px;
+}
+
+.main-title:first-child {
+  font-size: 70px;
+}
+
+.main-first-part {
+  margin: 40px 40px;
+  color: black;
+}
+
+.main-second-part {
+  margin: 40px 40px;
+}
+
+.footer {
+  background-color: #849989;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  clear: both;
+}
+
+.footer-a {
+  display: inline-block;
+  margin: 40px 10px;
+}
+
+.footer-a:link {
+  color: black;
+  text-decoration: none;
+}
+
+.footer-a:visited {
+  color: white;
+}
+
+.footer-a:hover {
+  color: #2b322a;
+}
+
+.footer-a:active {
+  color: #2b322a;
+}
+
+.decoration-span {
+  color: #849989;
+}
+
+.decoration-block1 {
+  float: left;
+  width: 900px;
+  margin: 40px 40px;
+}
+
+.decoration-block2 {
+  float: left;
+  width: 900px;
+  height: 200px;
+  margin: 40px 40px;
+}
+
+.decoration-block-img {
+  text-align: right;
+  margin: 40px 250px;
+}
+
+.decoration-image {
+  border-radius: 40px;
+}
+
+.plant-care-block1 {
+  margin: 40px 40px;
+}
+
+.plant-care-image {
+  border-radius: 40px;
+  margin: 40px 40px;
+}
+
+.plant-care-table {
+  margin: 40px 40px;
+}
+
+.types-of-indoor-plants-block1 {
+  margin: 40px 40px;
+}
+
+.types-of-indoor-plants-image {
+  border-radius: 40px;
+  margin: 40px 40px;
+}
+
+.types-of-indoor-plants-block2 {
+  margin: 40px 40px;
+}
+
+.types-of-indoor-plants-block3 {
+  margin: 40px 40px;
+}
+
+.footer-a:before {
+  content: '|';
+  margin-right: 5px;
+}
+
+.footer-a:after {
+  content: '|';
+  margin-left: 5px;
 }
