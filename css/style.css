@@ -35,6 +35,10 @@ ol {
   font-size: 20px;
 }
 
+li {
+  margin: 10px 30px;
+}
+
 dl {
   color: rgb(0, 0, 0);
   font-size: 20px;
@@ -97,6 +101,14 @@ td a {
 }
 
 .main-second-part {
+  margin: 40px 40px;
+}
+
+.main-third-part {
+  margin: 40px 40px;
+}
+
+.main-fourth-part {
   margin: 40px 40px;
 }
 

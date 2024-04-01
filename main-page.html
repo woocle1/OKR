@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Main page</title>
     <link rel="stylesheet" href="css/style.css" />
+    <script src="scripts/sctipt.js"></script>
   </head>
   <body class="main-body">
     <div class="main-title">
@@ -40,7 +41,42 @@
     <div class="main-second-part">
       We are grateful to you for choosing our website as a source of information
       and inspiration. Together we will create a better and greener future for
-      us and for our planet. Thank you for being with us!
+      us and for our planet. Thank you for being with us! <br />
+      Top indoor plants:
+      <ol>
+        <li>Fiddle Leaf Fig</li>
+        <li>Snake Plant</li>
+        <li>Spider Plant</li>
+        <li>ZZ Plant</li>
+        <li>Pothos</li>
+        <li>Peace Lily</li>
+        <li>Philodendron</li>
+        <li>Chinese Evergreen</li>
+        <li>Rubber Plant</li>
+      </ol>
+    </div>
+    <div class="main-third-part">
+      Furthermore, consider these fascinating facts that highlight the benefits
+      of indoor plants. Research suggests that indoor plants can enhance
+      concentration and productivity, whether you're working in an office or
+      relaxing at home. They serve as catalysts for creativity, inspiring you to
+      explore various plant compositions and shapes, thereby fostering a sense
+      of artistic fulfillment.
+    </div>
+    <div class="main-fourth-part">
+      Moreover, caring for plants contributes to improved air quality, aids in
+      lowering blood pressure, boosts immunity, and promotes an overall
+      healthier lifestyle.
+    </div>
+    <div class="main-fourth-part">
+      <button onclick="HNselect()">Change Line1</button>
+      <button onclick="HNselect2()">Change Heading</button>
+      <button onclick="changeHTML()">Change Content</button>
+      <button onclick="newHeader()">Add Heading</button>
+      <button onclick="newPlant()">Add Plant</button>
+      <button onclick="deletePlant()">Delete Plant</button>
+      <button onclick="changePlant()">Change Plant</button>
+      <button onclick="addLink()">Add Link</button>
     </div>
     <footer class="footer">
       <a class="footer-a" href="/decoration.html">Decoration page</a>
@@ -49,5 +85,11 @@
         >Types of indoor plants</a
       >
     </footer>
+    <script>
+      plant = prompt('Яка ваша улюблена квітка?')
+      alert(plant)
+      confirm('Дякую!')
+      changeBackground()
+    </script>
   </body>
 </html>
