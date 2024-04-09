@@ -91,50 +91,36 @@
       >
     </footer>
     <script>
-      // Отримуємо посилання на перетягуваний елемент
-      var draggable = document.getElementById('draggable')
+      let draggable = document.getElementById('draggable')
 
-      // Початкові координати курсора при натисканні на елемент
-      var offsetX, offsetY
+      let offsetX, offsetY
 
-      // Початкові координати елемента в момент початку перетягування
-      var initialLeft, initialTop
+      let initialLeft, initialTop
 
-      // Функція для початку перетягування
       function startDragging(event) {
-        // Зберігаємо початкові координати курсора
         offsetX = event.clientX
         offsetY = event.clientY
 
-        // Зберігаємо початкові координати елемента
         initialLeft = draggable.offsetLeft
         initialTop = draggable.offsetTop
 
-        // Додаємо обробник події для переміщення елемента
         document.addEventListener('mousemove', drag)
 
-        // Забороняємо браузерові вибирати текст під час перетягування
         event.preventDefault()
       }
 
-      // Функція для переміщення елемента
       function drag(event) {
-        // Визначаємо нові координати для елемента
-        var newLeft = initialLeft + (event.clientX - offsetX)
-        var newTop = initialTop + (event.clientY - offsetY)
+        let newLeft = initialLeft + (event.clientX - offsetX)
+        let newTop = initialTop + (event.clientY - offsetY)
 
-        // Встановлюємо нові координати для елемента
         draggable.style.left = newLeft + 'px'
         draggable.style.top = newTop + 'px'
       }
 
-      // Функція для завершення перетягування
       function stopDragging(event) {
-        // Видаляємо обробник події для переміщення елемента
         document.removeEventListener('mousemove', drag)
       }
 
-      // Додаємо обробники подій для початку та завершення перетягування
       draggable.addEventListener('mousedown', startDragging)
       document.addEventListener('mouseup', stopDragging)
 
