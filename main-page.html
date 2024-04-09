@@ -37,6 +37,15 @@
       can also help lower blood pressure, improve immunity, and contribute to an
       overall healthy lifestyle.
     </div>
+    <div id="draggable" class="draggable">
+      <img
+        src="/img/img12.png"
+        alt=""
+        width="100"
+        height="300"
+        class="draggable1"
+      />
+    </div>
     <div class="main-second-part">
       We are grateful to you for choosing our website as a source of information
       and inspiration. Together we will create a better and greener future for
@@ -67,22 +76,10 @@
       lowering blood pressure, boosts immunity, and promotes an overall
       healthier lifestyle.
     </div>
-    <div class="main-title">
-      <button onclick="showMessageByAttribute()">Attribute</button>
-      <button id="myButton">Property</button>
-      <input id="elem" type="button" value="Click" />
-    </div>
-    <div id="menu" class="main-title">
-      <button data-action="newPlant">New plant</button>
-      <button data-action="deletePlant">Delete plant</button>
-      <button data-action="changePlant">Change plant</button>
-    </div>
-    <button data-toggleId="content1" class="main-title">Delete plant 1</button>
-    <button data-toggleId="content2" class="main-title">Delete plant 2</button>
-    <div id="content1" class="main-title">
+    <div id="content1" class="element">
       <p>🌷</p>
     </div>
-    <div id="content2" class="main-title">
+    <div id="content2" class="element">
       <p>🌺</p>
     </div>
 
@@ -94,75 +91,60 @@
       >
     </footer>
     <script>
-      document.addEventListener('click', function (event) {
-        let id = event.target.dataset.toggleid
-        if (!id) return
+      // Отримуємо посилання на перетягуваний елемент
+      var draggable = document.getElementById('draggable')
 
-        let elem = document.getElementById(id)
-        if (!elem) return
+      // Початкові координати курсора при натисканні на елемент
+      var offsetX, offsetY
 
-        elem.classList.toggle('hidden')
-      })
+      // Початкові координати елемента в момент початку перетягування
+      var initialLeft, initialTop
 
-      document.addEventListener('DOMContentLoaded', function () {
-        const menu = document.getElementById('menu')
-        menu.addEventListener('click', menuHandler)
-      })
+      // Функція для початку перетягування
+      function startDragging(event) {
+        // Зберігаємо початкові координати курсора
+        offsetX = event.clientX
+        offsetY = event.clientY
 
-      function menuHandler(event) {
-        if (event.target.tagName === 'BUTTON') {
-          let action = event.target.dataset.action
+        // Зберігаємо початкові координати елемента
+        initialLeft = draggable.offsetLeft
+        initialTop = draggable.offsetTop
 
-          switch (action) {
-            case 'newPlant':
-              newPlant()
-              break
-            case 'deletePlant':
-              deletePlant()
-              break
-            case 'changePlant':
-              changePlant()
-              break
-            default:
-              alert('Unknown action')
-          }
-        }
+        // Додаємо обробник події для переміщення елемента
+        document.addEventListener('mousemove', drag)
+
+        // Забороняємо браузерові вибирати текст під час перетягування
+        event.preventDefault()
       }
 
-      function newPlant() {
-        let newPlant = document.createElement('li')
-        let plantText = document.createTextNode('Aloe Vera')
-        newPlant.appendChild(plantText)
-        let plantsList = document.querySelector('.main-second-part ol')
-        plantsList.append(newPlant)
+      // Функція для переміщення елемента
+      function drag(event) {
+        // Визначаємо нові координати для елемента
+        var newLeft = initialLeft + (event.clientX - offsetX)
+        var newTop = initialTop + (event.clientY - offsetY)
+
+        // Встановлюємо нові координати для елемента
+        draggable.style.left = newLeft + 'px'
+        draggable.style.top = newTop + 'px'
       }
 
-      function deletePlant() {
-        let plantsList = document.querySelector('.main-second-part ol')
-        let lastPlantIndex = plantsList.children.length - 1
-        let lastPlant = plantsList.children[lastPlantIndex]
-        lastPlant.remove()
+      // Функція для завершення перетягування
+      function stopDragging(event) {
+        // Видаляємо обробник події для переміщення елемента
+        document.removeEventListener('mousemove', drag)
       }
 
-      function changePlant() {
-        let plantsList = document.querySelector('.main-second-part ol')
-        let firstPlant = plantsList.getElementsByTagName('li')[0]
-        firstPlant.textContent = 'Plantain'
-      }
+      // Додаємо обробники подій для початку та завершення перетягування
+      draggable.addEventListener('mousedown', startDragging)
+      document.addEventListener('mouseup', stopDragging)
 
-      document.addEventListener('DOMContentLoaded', function () {
-        const list = document.querySelector('ol')
-
-        list.addEventListener('click', function (event) {
-          const clickedElement = event.target
-
-          if (clickedElement.tagName === 'LI') {
-            const listItems = list.getElementsByTagName('li')
-            for (let i = 0; i < listItems.length; i++) {
-              listItems[i].classList.remove('highlighted')
-            }
-            clickedElement.classList.add('highlighted')
-          }
+      let elements = document.querySelectorAll('.element')
+      elements.forEach(function (element) {
+        element.addEventListener('mouseover', function (event) {
+          event.target.style.backgroundColor = '#849989'
+        })
+        element.addEventListener('mouseout', function (event) {
+          event.target.style.backgroundColor = 'rgb(92, 109, 98)'
         })
       })
     </script>

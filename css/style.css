@@ -230,3 +230,20 @@ input {
   height: 50px;
   font-size: 16px;
 }
+
+.element {
+  background-color: rgb(92, 109, 98);
+  margin: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.draggable {
+  padding: 10px;
+  position: absolute;
+  cursor: move;
+}
+
+.draggable1 {
+  margin: 100px;
+  margin-left: 400px;
+}
