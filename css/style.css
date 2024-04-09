@@ -210,3 +210,23 @@ td a {
   content: '|';
   margin-left: 5px;
 }
+
+.highlighted {
+  background-color: #849989;
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  width: 150px;
+  height: 50px;
+  font-size: 16px;
+}
+
+input {
+  width: 150px;
+  height: 50px;
+  font-size: 16px;
+}
